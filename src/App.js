@@ -7,14 +7,14 @@ function App() {
   return (
     <>
     
-    <div className ="banner">
-    <header>
-      <div className = "col-xs-3">
+    <div className ="row text-white">
+    <header className = "header">
+      <div className = "col-xs-1">
       
       <img src={logo1} alt ="logo1"/>
       </div>
       <div className ="col-xs-3">
-      <h1 className="headline">Super To Do</h1>
+      <h1 className = "text-white">Super To Do</h1>
        
       </div>
       </header>  
