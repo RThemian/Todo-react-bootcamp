@@ -1,13 +1,13 @@
 import logo1 from './logo 1.png'
 import './App.css';
-import TodoList from './components/TodoList.js';
+import Todo from './components/Todo.js';
 
 
 function App() {
   return (
     <>
     
-    <div className ="row text-white">
+    <div className ="row">
     <header className = "header">
       <div className = "col-xs-1">
       
@@ -21,7 +21,7 @@ function App() {
       
     </div>
    
-     <TodoList/>
+     <Todo/>
    
     </>
   );
