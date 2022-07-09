@@ -10,6 +10,16 @@ function App() {
   const [value, setValue] = useState('');
   const [list, setList] = useState([]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    console.log(value);
+    if (value) {
+      setList([...list, value])
+    }
+    setValue("");
+  }
+
   return (
     <>
     
@@ -27,8 +37,16 @@ function App() {
       
     </div>
    
-     <Todo/>
-     <TodoList/>
+     <Todo
+        handleSubmit = {handleSubmit}
+        list = {list}
+     
+      />
+     <TodoList
+      
+
+     
+      />
    
     </>
   );

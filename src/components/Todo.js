@@ -4,11 +4,11 @@ import {useState} from 'react';
 import { TodoList } from './TodoList';
 
 
-const Todo = () => {
+const Todo = (props) => {
 
+    console.log("PROPS TODO", props);
+    const [list, setList] = useState([])
     const [value, setValue] = useState('');
-    const [list, setList] = useState([]);
-    
     
 
     const handleSubmit = (e) => {
