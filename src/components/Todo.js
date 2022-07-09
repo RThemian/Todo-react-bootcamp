@@ -41,10 +41,7 @@ const Todo = () => {
    
     <div>
     </div>
-    <TodoList
-
-
-    />
+    
     </>
   )
 }

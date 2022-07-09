@@ -1,10 +1,15 @@
 import logo1 from './logo 1.png'
 import './App.css';
 import Todo from './components/Todo.js';
-import {TodoList}  from './components/TodoList.js';
+import {TodoList} from './components/TodoList.js';
+import React, {useState} from 'react';
 
 
 function App() {
+
+  const [value, setValue] = useState('');
+  const [list, setList] = useState([]);
+
   return (
     <>
     
@@ -23,7 +28,7 @@ function App() {
     </div>
    
      <Todo/>
-     <TodoList />
+     <TodoList/>
    
     </>
   );
