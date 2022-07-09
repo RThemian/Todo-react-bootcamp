@@ -39,7 +39,15 @@ const Todo = () => {
       </form>
       </div>
     <div>{listHolder ? listHolder : "Nothing to do, yet..."}</div>
-    <div>{listHolder}</div>
+    <div>
+    {
+      /*  This maps each array item to a div adds
+      the style declared above and return it */
+      list ? list.map(item => <li key={item} 
+            >{item}</li>) : "Nothing to do yet..."
+    }
+    </div>
+    <div>{list ? <button>Clear All Todos</button> : ""}</div>
     </>
   )
 }
