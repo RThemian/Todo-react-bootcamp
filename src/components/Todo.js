@@ -7,8 +7,8 @@ const Todo = () => {
 
     const [value, setValue] = useState('');
     const [list, setList] = useState([]);
-    let listHolder =[];
-
+    
+    
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -17,12 +17,14 @@ const Todo = () => {
       if (value) {
         setList([...list, value])
       }
-      console.log("list", list)
-    
-       listHolder = list.map(item => <li>{item}</li>)
-
+      setValue("");
     }
-    console.log("LISTHOLDER", listHolder)
+
+    const handleDelete = (e) => {
+        e.preventDefault();
+        setList("");
+    }
+
 
   return (
     <>
@@ -38,16 +40,16 @@ const Todo = () => {
       {'  '}<button type="submit"  >Add</button>
       </form>
       </div>
-    <div>{listHolder ? listHolder : "Nothing to do, yet..."}</div>
+   
     <div>
     {
       /*  This maps each array item to a div adds
       the style declared above and return it */
-      list ? list.map(item => <li key={item} 
+      list ? list.map(item => <li key={item} isComplete = "false"
             >{item}</li>) : "Nothing to do yet..."
     }
     </div>
-    <div>{list ? <button>Clear All Todos</button> : ""}</div>
+    <div>{list ? <button onClick = {handleDelete}>Clear Completed Tasks</button> : ""}</div>
     </>
   )
 }

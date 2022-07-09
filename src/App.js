@@ -1,6 +1,7 @@
 import logo1 from './logo 1.png'
 import './App.css';
 import Todo from './components/Todo.js';
+import {TodoList}  from './components/TodoList.js';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     </div>
    
      <Todo/>
+     <TodoList />
    
     </>
   );
