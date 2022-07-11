@@ -6,20 +6,20 @@ import { TodoList } from './TodoList';
 
 const Todo = () => {
 
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState("");
     const [list, setList] = useState([]);
     
     const runningList = list ? list.map(item => <li key={item} isComplete = "false"
     >{item}</li>) : "Nothing to do yet...";
 
-    console.log("runningList", runningList, runningList.isComplete);
+    console.log("runningList", runningList)
 
     const handleSubmit = (e) => {
       e.preventDefault();
       
       console.log(value);
       if (value) {
-        setList([...list, value])
+        setList([...list, {}])
       }
       setValue("");
     }
