@@ -1,6 +1,7 @@
 import React from 'react'
 import './Todo.css';
 import {useState} from 'react';
+import { TodoList } from './TodoList';
 
 
 const Todo = () => {
@@ -10,6 +11,8 @@ const Todo = () => {
     
     const runningList = list ? list.map(item => <li key={item} isComplete = "false"
     >{item}</li>) : "Nothing to do yet...";
+
+    console.log("runningList", runningList, runningList.isComplete);
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -43,9 +46,9 @@ const Todo = () => {
       </div>
    
     <div className='text-center'>
-    {
-      runningList
-    }
+    <TodoList
+      runningList = {runningList}
+      />
     </div>
     <div className='text-center'>{list ? <button onClick = {handleDelete}>Clear Completed Tasks</button> : ""}</div>
     </>
