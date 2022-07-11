@@ -41,7 +41,7 @@ const Todo = () => {
       </form>
       </div>
    
-    <div>
+    <div className='text-center'>
     {
       /*  This maps each array item to a div adds
       the style declared above and return it */
@@ -49,7 +49,7 @@ const Todo = () => {
             >{item}</li>) : "Nothing to do yet..."
     }
     </div>
-    <div>{list ? <button onClick = {handleDelete}>Clear Completed Tasks</button> : ""}</div>
+    <div className='text-center'>{list ? <button onClick = {handleDelete}>Clear Completed Tasks</button> : ""}</div>
     </>
   )
 }
