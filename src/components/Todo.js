@@ -8,7 +8,8 @@ const Todo = () => {
     const [value, setValue] = useState('');
     const [list, setList] = useState([]);
     
-    
+    const runningList = list ? list.map(item => <li key={item} isComplete = "false"
+    >{item}</li>) : "Nothing to do yet...";
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -43,10 +44,7 @@ const Todo = () => {
    
     <div className='text-center'>
     {
-      /*  This maps each array item to a div adds
-      the style declared above and return it */
-      list ? list.map(item => <li key={item} isComplete = "false"
-            >{item}</li>) : "Nothing to do yet..."
+      runningList
     }
     </div>
     <div className='text-center'>{list ? <button onClick = {handleDelete}>Clear Completed Tasks</button> : ""}</div>
