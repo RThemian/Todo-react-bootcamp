@@ -1,49 +1,39 @@
-import React from 'react'
-import './Todo.css';
-import {useState} from 'react';
-import { TodoList } from './TodoList';
-
+import React from "react";
+import "./Todo.css";
+import { useState } from "react";
+//import Box from '@material-ui/core/Box';
 
 const Todo = (props) => {
+  const [falsehood, setFalsehood] = useState(props.todo.isComplete);
 
-    console.log("PROPS TODO", props);
-    const [list, setList] = useState([])
-    const [value, setValue] = useState('');
-    
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      
-      console.log(value);
-      if (value) {
-        setList([...list, value])
-      }
-      setValue("");
-    }
-
+  const handleComplete = () => {
+    setFalsehood(!falsehood)
+  }
+  const handleDelete = () => {
+    //can't delete an object through itself or can I?
    
-
+  }
 
   return (
     <>
-    <div className = "text-center">
-      <h1 className='text-dark text-xl'>Task list</h1>
-      <form onSubmit = {handleSubmit}>
-      <input
-        value = {value}
-        onChange = {(e) => setValue(e.target.value)}
-        type = 'text'
-        placeholder = 'Add new task...'
-      />
-      {'  '}<button type="submit"  >Add</button>
-      </form>
-      </div>
-   
-    <div>
-    </div>
     
+     
+
+      
+      <div className="text-center">
+            <span class="badge badge-pill badge-primary">
+               
+            
+      <input className="form-check-input" onClick = {handleComplete} type="checkbox" value="" id="flexCheckDefault"/>
+   
+        <h3>{props.todo.name}</h3>
+        <h4>{falsehood ? "Done" : "Not Done"}</h4>
+        </span>
+      </div>
+      
+     
     </>
-  )
-}
+  );
+};
 
 export default Todo;
