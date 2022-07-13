@@ -4,15 +4,22 @@ import { useState } from "react";
 //import Box from '@material-ui/core/Box';
 
 const Todo = (props) => {
-  const [falsehood, setFalsehood] = useState(props.todo.isComplete);
+  const [falsehood, setFalsehood] = useState();
 
-  const handleComplete = () => {
-    setFalsehood(!falsehood)
-  }
+  console.log("PROPS TODO", props);
+
+  // const handleComplete = (event) => {
+    
+  //   console.log("HandleComplete", event)
+    
+
+  //   setFalsehood(!falsehood)
+  // }
   const handleDelete = () => {
     //can't delete an object through itself or can I?
    
   }
+props.toggleComplete(props.todo);
 
   return (
     <>
@@ -21,13 +28,13 @@ const Todo = (props) => {
 
       
       <div className="text-center">
-            <span class="badge badge-pill badge-primary">
+      <span class="badge badge-pill badge-primary">
                
             
-      <input className="form-check-input" onClick = {handleComplete} type="checkbox" value="" id="flexCheckDefault"/>
+      <input className="form-check-input" onClick = {(event, index) => {props.toggleComplete(event, index)}} type="checkbox" value="" id="flexCheckDefault"/>
    
         <h3>{props.todo.name}</h3>
-        <h4>{falsehood ? "Done" : "Not Done"}</h4>
+        <h4>{falsehood ? "Complete" : "Incomplete"}</h4>
         </span>
       </div>
       

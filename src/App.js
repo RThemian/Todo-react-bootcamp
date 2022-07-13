@@ -9,18 +9,20 @@ function App() {
   //make todos an array for methods
   const [todos, setTodos] = useState([]);
 
+  const [complete, setComplete] = useState('');
   
 
   //index must be sent with this function 
   //this index only exists in App.js so have to alter it here
-  const toggleComplete = (index) => {
+  function toggleComplete(event, index) {
 
     //create a copy of completed task name but with isComplete = !isComplete
     //reinsert this value into the todos array in the correct index location
 
-    let completedTask = {name: todos.name[index], isComplete: !todos.isComplete[index]}
+    console.log("toggleComplete HERE index", index )
+    //let completedTask = {name: todos[index].name, isComplete: !todos[index].isComplete}
 
-    setTodos([...todos, completedTask])
+   // setTodos([...todos, completedTask])
     
   }
 
@@ -40,8 +42,9 @@ function App() {
 
  
 
-  const handleDelete = () => {
-    
+  const handleDelete = (e) => {
+    e.preventDefault();
+    setTodos("Nothing to do yet...");
   }
 
 
@@ -72,13 +75,17 @@ function App() {
         </form>
       </div>
       <div>
-        {todos.map((todo) => {
+        {todos.map((todo, index) => {
           return <Todo 
+          index = {index}
           handleDelete = {handleDelete} 
           toggleComplete = {toggleComplete} 
           todo={todo} 
           />;
         })}
+      </div>
+      <div className="text-center">
+        {todos ? <button onClick = {handleDelete}>Clear completed tasks</button> : ""}
       </div>
     </>
   );
