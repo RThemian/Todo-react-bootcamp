@@ -22,7 +22,7 @@ function App() {
     console.log("toggleComplete HERE index", index, "CHECK name and t/f", todos[index].name, todos[index].isComplete)
     //let completedTask = {name: todos[index].name, isComplete: !todos[index].isComplete}
     const newTodos = [...todos];
-    newTodos[index].isComplete = true;
+    newTodos[index].isComplete = !newTodos[index].isComplete;
     
     setTodos([...newTodos])
     
