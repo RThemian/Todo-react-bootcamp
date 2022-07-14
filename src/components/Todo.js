@@ -27,15 +27,22 @@ const Todo = (props) => {
      
 
       
-      <div className="text-center">
-      <span className="badge badge-pill badge-primary">
+      <div className="text-center todo">
+      
                
-        <label>Task complete?</label>
-      <input  onClick = {() => props.toggleComplete(props.index)} type="checkbox" name = "complete" id="checkbox"/>
-   
-        <h3>{props.todo.name}</h3>
+        
+      <input
+      
+      onClick = {() => props.toggleComplete(props.index)} 
+      type="checkbox" 
+      name = "complete" 
+      id="checkbox"
+      checked = {props.todo.isComplete}
+      />
+      
+      <h3 className = "checkbox"  >{props.todo.name}</h3>
        
-        </span>
+        
       </div>
       
      

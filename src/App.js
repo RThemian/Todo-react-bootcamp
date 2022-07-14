@@ -9,7 +9,7 @@ function App() {
   //make todos an array for methods
   const [todos, setTodos] = useState([]);
 
- 
+ //test commentary 
   
 
   //index must be sent with this function 
@@ -49,7 +49,7 @@ function App() {
     let inCompleteTasks = todos.filter(element => element.isComplete === false);
     setTodos([...inCompleteTasks]);
   }
-
+  let trueCheck = [...todos.filter((element) => element.isComplete === true)];
 
   console.log(todos);
   return (
@@ -89,7 +89,7 @@ function App() {
         })}
       </div>
       <div className="text-center">
-        {todos[0] ? <button onClick = {handleDelete}>Clear completed tasks</button> : ""}
+        {trueCheck.length > 0 ? <button onClick = {handleDelete}>Clear completed tasks</button> : ""}
       </div>
     </>
   );
