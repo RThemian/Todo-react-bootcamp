@@ -1,14 +1,13 @@
 import React from "react";
 import "./Todo.css";
-import { useState } from "react";
-//import Box from '@material-ui/core/Box';
+
 
 const Todo = (props) => {
   
 
   console.log("PROPS TODO", props.index);
 
-  const {toggleComplete, handleDelete, todo, index} = props;
+  const {toggleComplete, todo, index} = props;
 
  
  

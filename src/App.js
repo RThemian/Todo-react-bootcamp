@@ -9,18 +9,13 @@ function App() {
   //make todos an array for methods
   const [todos, setTodos] = useState([]);
 
- //test commentary 
-  
-
-  //index must be sent with this function 
-  //this index only exists in App.js so have to alter it here
+ 
   function toggleComplete(index) {
 
     //create a copy of completed task name but with isComplete = !isComplete
     //reinsert this value into the todos array in the correct index location
 
-    console.log("toggleComplete HERE index", index, "CHECK name and t/f", todos[index].name, todos[index].isComplete)
-    //let completedTask = {name: todos[index].name, isComplete: !todos[index].isComplete}
+   
     const newTodos = [...todos];
     newTodos[index].isComplete = !newTodos[index].isComplete;
     
@@ -82,7 +77,7 @@ function App() {
           return <Todo 
           index = {index}
           key = {Math.random()*(index + 1)}
-          handleDelete = {handleDelete} 
+        
           toggleComplete = {toggleComplete} 
           todo={todo} 
           />;
