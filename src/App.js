@@ -49,17 +49,17 @@ function App() {
   console.log(todos);
   return (
     <>
-      <div className="row App">
+      <div className="row ">
         <header className="header">
-          <div className="col-xs-1">
+          <div className="col-xs-3">
             <img src={logo1} alt="logo1" />
           </div>
-          <div className="col-xs-3">
+          <div className="col-xs-3 toptext">
             <h1 className="text-white">Super To Do</h1>
           </div>
         </header>
       </div>
-      <div className="text-center">
+      <div className="text-center App">
         <h1 className="text-dark text-xl">Task list</h1>
         <form onSubmit={handleSubmit}>
           <input
@@ -72,7 +72,7 @@ function App() {
           <button type="submit">Add</button>
         </form>
       </div>
-      <div>
+      <div >
         {todos.map((todo, index) => {
           return <Todo 
           index = {index}

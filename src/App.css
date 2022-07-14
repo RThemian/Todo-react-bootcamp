@@ -2,5 +2,20 @@
 .row {
     background-color: black;
     color: white;
+    margin: 0 auto;
 }
+
+
+@media (max-width: 750px) {
+    header {
+      
+      -webkit-text-stroke: 1px #FFD700;
+      color: #046307;
+      
+    }
+    .App {
+        background-color: aqua;
+    }
+
+  }
 
