@@ -89,7 +89,7 @@ function App() {
         })}
       </div>
       <div className="text-center">
-        {todos ? <button onClick = {handleDelete}>Clear completed tasks</button> : ""}
+        {todos[0] ? <button onClick = {handleDelete}>Clear completed tasks</button> : ""}
       </div>
     </>
   );
