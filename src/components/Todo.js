@@ -6,7 +6,7 @@ import { useState } from "react";
 const Todo = (props) => {
   const [falsehood, setFalsehood] = useState();
 
-  console.log("PROPS TODO", props);
+  console.log("PROPS TODO", props.index);
 
   // const handleComplete = (event) => {
     
@@ -19,7 +19,7 @@ const Todo = (props) => {
     //can't delete an object through itself or can I?
    
   }
-props.toggleComplete(props.todo);
+//props.toggleComplete(props.todo);
 
   return (
     <>
@@ -28,13 +28,13 @@ props.toggleComplete(props.todo);
 
       
       <div className="text-center">
-      <span class="badge badge-pill badge-primary">
+      <span className="badge badge-pill badge-primary">
                
-            
-      <input className="form-check-input" onClick = {(event, index) => {props.toggleComplete(event, index)}} type="checkbox" value="" id="flexCheckDefault"/>
+        <label>Task complete?</label>
+      <input  onClick = {() => props.toggleComplete(props.index)} type="checkbox" name = "complete" id="checkbox"/>
    
         <h3>{props.todo.name}</h3>
-        <h4>{falsehood ? "Complete" : "Incomplete"}</h4>
+       
         </span>
       </div>
       
